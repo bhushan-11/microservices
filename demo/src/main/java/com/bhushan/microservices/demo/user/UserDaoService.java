@@ -2,6 +2,7 @@ package com.bhushan.microservices.demo.user;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ public class UserDaoService {
 	
 	private static List<User> users= new ArrayList<User>();
 	
-	private static int userCount=3;
+	private static int userCount=5;
 	
 	static {
 	users.add(new User(1, "Bhushan", new Date()));
@@ -50,5 +51,23 @@ public class UserDaoService {
 		
 		return null;
 	}
+	
+public User deletebyId(int id) {
+		
+	Iterator<User> iterator = users.iterator();
+	while(iterator.hasNext()) {
+		
+		User user = iterator.next();
+		if(user.getUserid()== id) {
+			iterator.remove(); //delete user from the static list
+			
+			return user;
+		}
+	}
+	
+		return null;
+	}
+
+
 	
 }

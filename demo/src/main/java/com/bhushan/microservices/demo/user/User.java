@@ -2,12 +2,18 @@ package com.bhushan.microservices.demo.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 public class User {
 
 	
 	private Integer userid;
 	
+	@Size(min = 2,message = "Username shourld have ateleast 2 characters")
 	private String userName;
+	
+	
 	
 	@Override
 	public String toString() {
@@ -44,8 +50,12 @@ public class User {
 	public void setDateofBirth(Date dateofBirth) {
 		this.dateofBirth = dateofBirth;
 	}
-
+@Past
 	private Date dateofBirth;
+	
+	protected User () {
+		
+	}
 
 
 	
