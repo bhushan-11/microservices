@@ -1,4 +1,4 @@
-package com.bhushan.microservices.demo.user;
+ package com.bhushan.microservices.demo.user;
 
 import java.net.URI;
 import java.util.List;
