@@ -19,6 +19,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
 
+
 @RestController
 public class UserResource {
 	
@@ -45,6 +46,10 @@ public class UserResource {
 		if(foundUser == null) {
 			throw new UserNotFoundException("id - "+ id);
 		}
+		
+	//Resource<User> resource = new Resource<User>(user);
+//		
+//		Resource
 		
 		return foundUser;
 		
